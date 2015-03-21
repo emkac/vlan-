@@ -1,0 +1,31 @@
+2960-RG(config)#vlan 2
+2960-RG(config-vlan)#name administration
+2960-RG(config-vlan)#ex
+2960-RG(config)#vlan 3,4,5
+2960-RG(config-vlan)#ex
+2960-RG(config)#
+
+
+
+#### suprimer un vlan
+2960-RG(config)#no vlan 2
+ 
+ ### afficher les vlans
+ 2960-RG#show vlan
+ 
+ ### ajouter un port a un vlan
+ 
+ 2960-RG(config)#interface fastEthernet 0/1
+2960-RG(config-if)#switchport mode access
+2960-RG(config-if)#switchport access vlan 3
+2960-RG(config-if)#ex
+2960-RG(config)#
+
+
+
+### mode trunk
+le mod trunk permet de faire passer plusieurs trafics par le port trunk
+3750(config)#interface gigabitEthernet 1/0/1
+3750(config)#switchport trunk encapsulation dot1q
+3750(config-if)#switchport mode trunk
+3750(config-if)#
